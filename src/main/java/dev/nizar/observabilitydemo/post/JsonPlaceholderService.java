@@ -1,5 +1,6 @@
 package dev.nizar.observabilitydemo.post;
 
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.service.annotation.GetExchange;
 
 import java.util.List;
@@ -11,5 +12,7 @@ public interface JsonPlaceholderService {
 
 
     @GetExchange("/posts/{id}")
-    Post findById(Integer id);
+    Post findById( @PathVariable Integer id);
+
+
 }

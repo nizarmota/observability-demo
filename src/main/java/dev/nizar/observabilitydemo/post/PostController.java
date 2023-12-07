@@ -9,8 +9,15 @@ import java.util.List;
 @RestController
 @RequestMapping("/api/posts/")
 public class PostController {
+
+
+    private final JsonPlaceholderService jsonPlaceholderService;
+
+    public PostController(JsonPlaceholderService jsonPlaceholderService) {
+        this.jsonPlaceholderService = jsonPlaceholderService;
+    }
     @GetMapping("")
     List<Post> findAll() {
-        return null;
+        return jsonPlaceholderService.findAll();
     }
 }
